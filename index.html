@@ -1,0 +1,1030 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CyberShield - Phishing, Scam & Fraud Awareness</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #09203f, #145da0);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffd43b;
+}
+
+/* SECTIONS */
+section {
+    display: none;
+    padding: 45px 7%;
+    min-height: 75vh;
+}
+
+section.active {
+    display: block;
+}
+
+/* HOME */
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    color: #09203f;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #145da0;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.hero-box {
+    background: linear-gradient(135deg, #09203f, #145da0);
+    color: white;
+    width: 330px;
+    height: 330px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+}
+
+.hero-box .shield {
+    font-size: 90px;
+}
+
+.btn {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    background: #145da0;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.btn:hover {
+    background: #09203f;
+}
+
+.btn-danger {
+    background: #d62828;
+}
+
+.btn-success {
+    background: #218739;
+}
+
+/* HEADINGS */
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title h2 {
+    color: #09203f;
+    font-size: 30px;
+}
+
+.title p {
+    margin-top: 8px;
+    color: #666;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #145da0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* FORM */
+.form-box {
+    max-width: 500px;
+    background: white;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+/* CHECKER */
+.result {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    display: none;
+}
+
+.safe {
+    background: #d8f3dc;
+    border-left: 6px solid #218739;
+}
+
+.warning {
+    background: #fff3cd;
+    border-left: 6px solid #ffb703;
+}
+
+.danger {
+    background: #f8d7da;
+    border-left: 6px solid #d62828;
+}
+
+/* QUIZ */
+.question {
+    background: white;
+    padding: 22px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.question h3 {
+    margin-bottom: 15px;
+}
+
+.option {
+    margin: 8px 0;
+}
+
+.score-box {
+    text-align: center;
+    margin-top: 25px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    display: none;
+}
+
+/* REPORT */
+.alert {
+    background: #fff3cd;
+    border-left: 6px solid #ffb703;
+    padding: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+    background: #09203f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MOBILE */
+@media(max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-box {
+        width: 260px;
+        height: 260px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+<div class="logo">🛡️ CyberShield</div>
+
+<nav>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('learn')">Learn</a>
+<a onclick="showSection('checker')">Checker</a>
+<a onclick="showSection('quiz')">Quiz</a>
+<a onclick="showSection('report')">Report</a>
+<a onclick="showSection('login')">Login</a>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+<section id="home" class="active">
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>Stay Safe from <span>Online Scams</span></h1>
+
+<p>
+CyberShield is a Phishing, Scam & Fraud Detection Awareness
+Program designed to educate people about common online frauds
+and help them identify suspicious messages and online activities.
+</p>
+
+<button class="btn" onclick="showSection('learn')">
+Start Learning
+</button>
+
+<button class="btn btn-danger" onclick="showSection('checker')">
+Check Suspicious Message
+</button>
+
+</div>
+
+<div class="hero-box">
+
+<div class="shield">🛡️</div>
+
+<h2>Think Before You Click</h2>
+
+<p>Stay Alert • Stay Safe</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LOGIN / REGISTER -->
+<section id="login">
+
+<div class="title">
+<h2>👤 User Registration</h2>
+<p>Join the CyberShield Awareness Program</p>
+</div>
+
+<div class="form-box">
+
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email">
+
+<label>Mobile Number</label>
+<input type="text" id="mobile" placeholder="Enter mobile number">
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Create password">
+
+<button class="btn" onclick="registerUser()">
+Register
+</button>
+
+<p id="registerMessage"></p>
+
+</div>
+
+</section>
+
+
+<!-- LEARN -->
+<section id="learn">
+
+<div class="title">
+
+<h2>📚 Learn About Online Scams</h2>
+
+<p>Understand common types of cyber fraud</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<h3>🎣 Phishing</h3>
+<p>
+Fraudsters send fake emails, SMS or links pretending to be
+banks, companies or trusted organizations to steal personal
+information.
+</p>
+</div>
+
+<div class="card">
+<h3>🔐 OTP Fraud</h3>
+<p>
+Scammers may pretend to be bank employees and ask for your
+OTP. Never share your OTP with anyone.
+</p>
+</div>
+
+<div class="card">
+<h3>💳 UPI Fraud</h3>
+<p>
+Fraudsters may send fake payment requests or convince victims
+to scan a QR code or enter their UPI PIN.
+</p>
+</div>
+
+<div class="card">
+<h3>🏦 KYC Scam</h3>
+<p>
+Fake messages may claim that your bank account or SIM will
+be blocked unless you immediately update KYC.
+</p>
+</div>
+
+<div class="card">
+<h3>💼 Fake Job Scam</h3>
+<p>
+Scammers offer fake jobs and ask candidates to pay registration,
+training or security fees.
+</p>
+</div>
+
+<div class="card">
+<h3>🎁 Lottery Scam</h3>
+<p>
+Victims receive fake messages claiming they won a lottery or
+prize and must pay a fee to receive it.
+</p>
+</div>
+
+<div class="card">
+<h3>📈 Investment Scam</h3>
+<p>
+Fraudsters promise guaranteed high returns and pressure victims
+to transfer money to fake investment platforms.
+</p>
+</div>
+
+<div class="card">
+<h3>📱 Social Media Scam</h3>
+<p>
+Fake accounts may impersonate friends, celebrities or companies
+and ask for money or personal information.
+</p>
+</div>
+
+<div class="card">
+<h3>☎️ Fake Customer Care</h3>
+<p>
+Scammers create fake customer-support numbers and request
+remote access, OTPs or banking information.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CHECKER -->
+<section id="checker">
+
+<div class="title">
+
+<h2>🔍 Suspicious Message Checker</h2>
+
+<p>
+Paste a suspicious SMS, email, WhatsApp message or URL below.
+</p>
+
+</div>
+
+<div class="form-box">
+
+<textarea id="message"
+placeholder="Paste the suspicious message here..."></textarea>
+
+<button class="btn btn-danger" onclick="checkMessage()">
+Check Message
+</button>
+
+<div id="checkerResult" class="result"></div>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+<section id="quiz">
+
+<div class="title">
+
+<h2>📝 Cyber Safety Awareness Quiz</h2>
+
+<p>Test your knowledge about phishing and online fraud.</p>
+
+</div>
+
+
+<div class="question">
+
+<h3>1. Should you share your OTP with a bank employee?</h3>
+
+<div class="option">
+<input type="radio" name="q1" value="0"> Yes
+</div>
+
+<div class="option">
+<input type="radio" name="q1" value="1"> No
+</div>
+
+</div>
+
+
+<div class="question">
+
+<h3>2. What should you do with an unknown suspicious link?</h3>
+
+<div class="option">
+<input type="radio" name="q2" value="1"> Avoid clicking it
+</div>
+
+<div class="option">
+<input type="radio" name="q2" value="0"> Click immediately
+</div>
+
+</div>
+
+
+<div class="question">
+
+<h3>3. What is phishing?</h3>
+
+<div class="option">
+<input type="radio" name="q3" value="1">
+A method used to trick people into revealing information
+</div>
+
+<div class="option">
+<input type="radio" name="q3" value="0">
+A method of protecting a computer
+</div>
+
+</div>
+
+
+<div class="question">
+
+<h3>4. Should you enter your UPI PIN to receive money?</h3>
+
+<div class="option">
+<input type="radio" name="q4" value="0"> Yes
+</div>
+
+<div class="option">
+<input type="radio" name="q4" value="1"> No
+</div>
+
+</div>
+
+
+<div class="question">
+
+<h3>5. What should you do if you face financial cyber fraud?</h3>
+
+<div class="option">
+<input type="radio" name="q5" value="1">
+Report it immediately through the appropriate official channel
+</div>
+
+<div class="option">
+<input type="radio" name="q5" value="0">
+Ignore it
+</div>
+
+</div>
+
+
+<button class="btn" onclick="submitQuiz()">
+Submit Quiz
+</button>
+
+
+<div id="scoreBox" class="score-box"></div>
+
+</section>
+
+
+<!-- SAFETY -->
+<section id="safety">
+
+<div class="title">
+
+<h2>🛡️ Safety Tips</h2>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>1️⃣ Protect OTP</h3>
+<p>Never share OTP, PIN or password with anyone.</p>
+</div>
+
+<div class="card">
+<h3>2️⃣ Verify Links</h3>
+<p>Check the website address before entering sensitive information.</p>
+</div>
+
+<div class="card">
+<h3>3️⃣ Avoid Unknown APKs</h3>
+<p>Do not install applications received from unknown sources.</p>
+</div>
+
+<div class="card">
+<h3>4️⃣ Verify Calls</h3>
+<p>Use official websites or apps to find customer-care numbers.</p>
+</div>
+
+<div class="card">
+<h3>5️⃣ Don't Rush</h3>
+<p>Scammers often create urgency to make victims act without thinking.</p>
+</div>
+
+<div class="card">
+<h3>6️⃣ Verify Payment Requests</h3>
+<p>Never approve a payment request without confirming who sent it.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REPORT -->
+<section id="report">
+
+<div class="title">
+
+<h2>🚨 Report Cyber Fraud</h2>
+
+<p>Use official channels for reporting.</p>
+
+</div>
+
+
+<div class="alert">
+
+<strong>Important:</strong>
+
+If you have already lost money because of a cyber financial
+fraud, report it immediately. Do not wait.
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h3>📞 Cyber Crime Helpline</h3>
+
+<p>
+For financial cyber fraud in India, call:
+</p>
+
+<h2>1930</h2>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌐 National Cyber Crime Reporting</h3>
+
+<p>
+Use the official Government of India cybercrime reporting portal
+for reporting cybercrime.
+</p>
+
+<br>
+
+<a
+href="https://cybercrime.gov.in/"
+target="_blank">
+
+<button class="btn btn-danger">
+Open Cyber Crime Portal
+</button>
+
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📱 Sanchar Saathi – Chakshu</h3>
+
+<p>
+Chakshu can be used to report suspected fraudulent
+communications such as suspicious calls, SMS and WhatsApp
+messages.
+</p>
+
+<br>
+
+<a
+href="https://sancharsaathi.gov.in/"
+target="_blank">
+
+<button class="btn">
+Open Sanchar Saathi
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<p>
+© 2026 CyberShield | Phishing, Scam & Fraud Detection Awareness Program
+</p>
+
+<p>
+Think Before You Click • Stay Alert • Stay Safe
+</p>
+
+</footer>
+
+
+<script>
+
+/* SECTION NAVIGATION */
+
+function showSection(sectionId) {
+
+    document.querySelectorAll("section").forEach(function(section) {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* REGISTRATION */
+
+function registerUser() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+    let password = document.getElementById("password").value;
+
+    let message = document.getElementById("registerMessage");
+
+    if(name === "" || email === "" || mobile === "" || password === "") {
+
+        message.innerHTML =
+        "<br><span style='color:red'>Please fill all fields.</span>";
+
+        return;
+    }
+
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userEmail", email);
+
+    message.innerHTML =
+    "<br><span style='color:green;font-weight:bold'>" +
+    "Registration successful! Welcome " + name + " 🎉" +
+    "</span>";
+}
+
+
+/* MESSAGE CHECKER */
+
+function checkMessage() {
+
+    let message =
+    document.getElementById("message").value.toLowerCase();
+
+    let result =
+    document.getElementById("checkerResult");
+
+    if(message.trim() === "") {
+
+        result.style.display = "block";
+        result.className = "result warning";
+
+        result.innerHTML =
+        "<strong>Please enter a message to check.</strong>";
+
+        return;
+    }
+
+
+    let warningWords = [
+
+        "otp",
+        "password",
+        "pin",
+        "urgent",
+        "click here",
+        "verify your account",
+        "account blocked",
+        "kyc",
+        "lottery",
+        "winner",
+        "prize",
+        "cashback",
+        "refund",
+        "bank account",
+        "upi",
+        "investment",
+        "send money",
+        "transfer money",
+        "claim now",
+        "limited time",
+        "apk",
+        "download"
+
+    ];
+
+
+    let found = [];
+
+    warningWords.forEach(function(word) {
+
+        if(message.includes(word)) {
+            found.push(word);
+        }
+
+    });
+
+
+    result.style.display = "block";
+
+
+    if(found.length >= 3) {
+
+        result.className = "result danger";
+
+        result.innerHTML =
+        "<h3>⚠️ Highly Suspicious</h3>" +
+
+        "<p>This message contains several common scam warning signs.</p>" +
+
+        "<p><strong>Warning signs detected:</strong> " +
+        found.join(", ") +
+        "</p>" +
+
+        "<p>Do not share OTP/PIN/passwords, click unknown links " +
+        "or transfer money without verification.</p>";
+
+    }
+
+    else if(found.length > 0) {
+
+        result.className = "result warning";
+
+        result.innerHTML =
+        "<h3>⚠️ Be Careful</h3>" +
+
+        "<p>Some warning signs were detected.</p>" +
+
+        "<p><strong>Possible warning signs:</strong> " +
+        found.join(", ") +
+        "</p>" +
+
+        "<p>Verify the sender independently before taking action.</p>";
+
+    }
+
+    else {
+
+        result.className = "result safe";
+
+        result.innerHTML =
+        "<h3>✅ No Obvious Warning Signs</h3>" +
+
+        "<p>No common scam keywords were detected.</p>" +
+
+        "<p><strong>Important:</strong> This does NOT guarantee " +
+        "that the message is genuine or safe. Always verify " +
+        "important communications independently.</p>";
+
+    }
+
+}
+
+
+/* QUIZ */
+
+function submitQuiz() {
+
+    let score = 0;
+
+    for(let i = 1; i <= 5; i++) {
+
+        let answer =
+        document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        if(answer) {
+            score += Number(answer.value);
+        }
+
+    }
+
+
+    let percentage = (score / 5) * 100;
+
+    let level;
+
+
+    if(percentage <= 40) {
+
+        level = "Beginner";
+
+    }
+
+    else if(percentage <= 70) {
+
+        level = "Developing Awareness";
+
+    }
+
+    else if(percentage <= 90) {
+
+        level = "Good Awareness";
+
+    }
+
+    else {
+
+        level = "Cyber Safety Champion";
+
+    }
+
+
+    let scoreBox =
+    document.getElementById("scoreBox");
+
+    scoreBox.style.display = "block";
+
+
+    scoreBox.innerHTML =
+
+    "<h2>🎉 Your Result</h2>" +
+
+    "<h1>" + score + " / 5</h1>" +
+
+    "<p><strong>Percentage:</strong> " +
+    percentage + "%</p>" +
+
+    "<p><strong>Awareness Level:</strong> " +
+    level + "</p>";
+
+
+    localStorage.setItem(
+        "quizScore",
+        percentage
+    );
+
+}
+
+
+/* LOAD USER */
+
+window.onload = function() {
+
+    let savedName =
+    localStorage.getItem("userName");
+
+    if(savedName) {
+
+        console.log(
+            "Welcome back " + savedName
+        );
+
+    }
+
+};
+
+</script>
+
+</body>
+</html>
+```
